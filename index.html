@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Utility App | LMCST</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      background: linear-gradient(120deg,#1c2a3a,#243b55);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#ffffff;
+    }
+
+    .app{
+      width:380px;
+      background: rgba(255,255,255,0.08);
+      border-radius:16px;
+      padding:22px;
+      box-shadow:0 15px 35px rgba(0,0,0,0.4);
+      text-align:center;
+    }
+
+    .college-name{
+      font-size:14px;
+      letter-spacing:0.8px;
+      text-transform:uppercase;
+      opacity:0.85;
+      margin-bottom:6px;
+    }
+
+    h1{
+      font-size:24px;
+      margin-bottom:6px;
+    }
+
+    .tagline{
+      font-size:13px;
+      opacity:0.75;
+      margin-bottom:18px;
+    }
+
+    .box{
+      background: rgba(0,0,0,0.25);
+      padding:16px;
+      border-radius:12px;
+    }
+
+    select{
+      width:100%;
+      padding:10px;
+      border-radius:8px;
+      border:none;
+      outline:none;
+      font-size:14px;
+      margin-bottom:12px;
+    }
+
+    button{
+      width:100%;
+      padding:10px;
+      border:none;
+      border-radius:10px;
+      background:#00e0a8;
+      font-size:15px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#00c18f;
+    }
+
+    .output{
+      margin-top:12px;
+      font-size:14px;
+      min-height:40px;
+      line-height:1.4;
+    }
+
+    footer{
+      margin-top:14px;
+      font-size:12px;
+      opacity:0.7;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app">
+
+    <div class="college-name">
+      Laachoo Memorial College of Science and Technology
+    </div>
+
+    <h1>Student Utility App</h1>
+    <div class="tagline">
+      Mini Project for Academic Practice
+    </div>
+
+    <div class="box">
+      <select id="status">
+        <option value="">Select current status</option>
+        <option value="study">Studying</option>
+        <option value="tired">Feeling Tired</option>
+        <option value="stress">Under Stress</option>
+        <option value="free">Free Time</option>
+      </select>
+
+      <button onclick="studentHelper()">Get Suggestion</button>
+
+      <div class="output" id="result"></div>
+    </div>
+
+    <footer onclick="aboutDev()">
+      Developed by <strong>Bhanu Solanki</strong>
+    </footer>
+
+  </div>
+
+  <script>
+    // Mini project coded manually by Bhanu Solanki
+    // Laachoo Memorial College of Science and Technology
+
+    function studentHelper(){
+      const status = document.getElementById("status").value;
+      const result = document.getElementById("result");
+
+      let message = "";
+
+      if(status === "study"){
+        message = "Maintain focus and revise important topics regularly.";
+      }
+      else if(status === "tired"){
+        message = "Take a short break, hydrate yourself and continue later.";
+      }
+      else if(status === "stress"){
+        message = "Relax your mind. Proper planning reduces stress.";
+      }
+      else if(status === "free"){
+        message = "Use this time to learn a new skill or revise notes.";
+      }
+      else{
+        message = "Please select your current status.";
+      }
+
+      result.textContent = message;
+    }
+
+    function aboutDev(){
+      alert("This academic mini project is developed by Bhanu Solanki using HTML, CSS and JavaScript.");
+    }
+
+    console.log(
+      "%cLMCST Mini Project | Developed by Bhanu Solanki",
+      "color:#00e0a8; font-size:15px; font-weight:bold;"
+    );
+  </script>
+
+</body>
+</html>
